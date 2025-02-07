@@ -5,7 +5,6 @@ dotenv.config();
 const app = express()
 const user = require('./models/user');
 
-// require('./models');
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
