@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 const app = express()
-const user = require('./models/user')
-;
+const user = require('./models/user');
 
 // require('./models');
 const port = process.env.PORT || 3000;
