@@ -7,9 +7,6 @@ const user = require('./models/user');
 
 // require('./models');
 const port = process.env.PORT || 3000;
-// chack the co
-
-
 
 app.use(bodyParser.json());
 
