@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Visiting Card</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .card { 
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        .company-name {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .buttons button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-details {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .share-buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .share-buttons button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo">
+        </div>
+        <h1 class="company-name">Your Company Name</h1>
+
+        <div class="buttons">
+            <button onclick="directCall()">Call Us</button>
+            <button onclick="directWhatsApp()">WhatsApp</button>
+            <button onclick="directLocation()">Get Location</button>
+            <button onclick="directMail()">Email Us</button>
+        </div>
+
+        <div class="contact-details">
+            <p>Email: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+            <p>Address: 123 Business St, City, Country</p>
+            <p>Website: <a href="https://www.yourcompany.com" target="_blank">www.yourcompany.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+        </div>
+
+        <div class="share-buttons">
+            <button onclick="shareCard()">Share Card</button>
+        </div>
+    </div>
+    <script>
+        function directCall() {
+            window.location.href = "tel:+1234567890";
+        }
+
+        function directWhatsApp() {
+            window.location.href = "https://wa.me/1234567890";
+        }
+
+        function directLocation() {
+            window.location.href = "https://www.google.com/maps?q=123+Business+St,+City,+Country";
+        }
+
+        function directMail() {
+            window.location.href = "mailto:info@yourcompany.com";
+        }
+
+        function shareCard() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Digital Visiting Card',
+                    text: 'Check out this digital visiting card!',
+                    url: window.location.href
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                })
+                    .catch(console.error);
+            } else {
+                alert('Sharing is not supported in your browser.');
+            }
+        }
+    </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+
+</html>
